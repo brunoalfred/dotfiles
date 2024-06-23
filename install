@@ -18,6 +18,10 @@ mkdir -p $HOME/.local/bin
 rm -rf $HOME/.local/bin/t
 ln -sf $DOTFILES/scripts/t $HOME/.local/bin/t
 
+# Neovim
+rm -rf $HOME/.config/nvim
+ln -s $DOTFILES/nvim $HOME/.config/nvim
+
 # Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

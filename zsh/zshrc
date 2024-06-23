@@ -64,9 +64,13 @@ export FZF_DEFAULT_OPTS='
 --color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef,gutter:-1,border:#1f2335
 '
 
+source <(fzf --zsh)
+
 # Aliases
 alias vim="nvim"
-
+alias gcb="git branch | fzf --preview 'git show --color=always {-1}' \
+                 --bind 'enter:become(git checkout {-1})' \
+                 --height 80% --layout reverse"
 nah() {
     git reset --hard
 
