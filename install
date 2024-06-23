@@ -8,6 +8,16 @@ ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 # iTerm
 # Sooon, Still gathering inspiration
 
+# Tmux
+rm -rf $HOME/.tmux.conf
+ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
+
+# Scripts
+mkdir -p $HOME/.local/bin
+
+rm -rf $HOME/.local/bin/t
+ln -sf $DOTFILES/scripts/t $HOME/.local/bin/t
+
 # Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

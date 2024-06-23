@@ -40,19 +40,19 @@ source $ZSH/oh-my-zsh.sh
 
 # Decrease delay that vi-mode waits for the end of a key sequence
 export KEYTIMEOUT=15
+typeset -U path cdpath fpath
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+path=(
+    $HOME/.local/bin
+    ./vendor/bin
+    $HOME/Code/brunoalfred/dotfiles/scripts
+    $path
+)
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+setopt auto_cd
+cdpath=(
+    $HOME/Code
+)
 
 # Aliases
 alias vim="nvim"
